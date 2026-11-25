@@ -73,12 +73,23 @@ main {
 .rows .indent .k { font-weight: 400; }
 .colhead { font-weight: 700; font-size: 15px; padding: 6px 0 4px; border-top: 0 !important; }
 
+/* The inverted row, as in the graphics kit (bf.js): the ink block is inset so a strip of paper
+   separates it from the rules above and below, and it reaches only 12px past the text, never the box. */
 .invert {
-  background: var(--ink);
+  position: relative;
+  isolation: isolate;
   color: var(--paper);
-  margin: 0 -18px;
-  padding-left: 18px !important;
-  padding-right: 18px !important;
+  padding: 13px 0 11px !important;
+}
+.invert::before {
+  content: "";
+  position: absolute;
+  left: -12px;
+  right: -12px;
+  top: 5px;
+  bottom: 3px;
+  background: var(--ink);
+  z-index: -1;
 }
 .invert a { text-decoration-color: var(--paper); }
 
