@@ -1,0 +1,120 @@
+/* Keen On Coffee: Brew Facts on the web. Paper, ink, rules; tomato only for a rating. */
+:root {
+  --paper: #FDFCF9;
+  --ink: #111111;
+  --tomato: #E2462B;
+  --heavy: 14px;
+  --medium: 6px;
+  --hair: 1.5px;
+}
+
+* { box-sizing: border-box; }
+
+html { background: var(--paper); }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Libre Franklin", "Franklin Gothic Medium", "Helvetica Neue", Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+  font-variant-numeric: tabular-nums;
+}
+
+a { color: inherit; text-decoration-thickness: 2px; text-underline-offset: 3px; }
+a:hover { text-decoration-thickness: 4px; }
+a:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+
+main {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 56px 16px 72px;
+}
+
+.logo { display: block; width: 100%; max-width: 420px; height: auto; margin: 0 auto 48px; }
+
+/* The panel: a thin ink box, rows between rules */
+.panel {
+  border: 3px solid var(--ink);
+  padding: 14px 18px 12px;
+  background: var(--paper);
+}
+
+.panel h1, .panel h2 {
+  margin: 0;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+}
+.panel h1 { font-size: clamp(44px, 11vw, 68px); }
+.panel h2 { font-size: clamp(30px, 7vw, 40px); }
+
+.serving { margin: 6px 0 0; font-size: 19px; }
+.serving b { font-weight: 900; }
+
+.rule-heavy { height: var(--heavy); background: var(--ink); margin: 10px 0 0; }
+.rule-medium { height: var(--medium); background: var(--ink); margin: 0; }
+
+.rows { list-style: none; margin: 0; padding: 0; }
+.rows li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  padding: 7px 0 6px;
+  border-top: var(--hair) solid var(--ink);
+}
+.rows li:first-child { border-top: 0; }
+.rows .k b { font-weight: 800; }
+.rows .v { font-weight: 900; text-align: right; white-space: nowrap; }
+.rows .indent { padding-left: 22px; }
+.rows .indent .k { font-weight: 400; }
+.colhead { font-weight: 700; font-size: 15px; padding: 6px 0 4px; border-top: 0 !important; }
+
+.invert {
+  background: var(--ink);
+  color: var(--paper);
+  margin: 0 -18px;
+  padding-left: 18px !important;
+  padding-right: 18px !important;
+}
+.invert a { text-decoration-color: var(--paper); }
+
+.lot {
+  margin: 10px 0 0;
+  text-align: right;
+  font-family: "Doto", ui-monospace, monospace;
+  font-weight: 700;
+  font-size: 15px;
+  opacity: 0.72;
+}
+
+.text-panel p { margin: 12px 0; }
+.text-panel h3 {
+  margin: 0;
+  padding: 10px 0 2px;
+  font-size: 21px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+.text-panel ul { margin: 6px 0 12px; padding-left: 22px; }
+.text-panel li { margin: 4px 0; }
+.text-panel section { border-top: var(--hair) solid var(--ink); padding-bottom: 4px; }
+.text-panel section:first-of-type { border-top: 0; }
+
+footer {
+  margin-top: 28px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px 20px;
+  font-size: 15px;
+}
+
+@media (max-width: 420px) {
+  body { font-size: 17px; }
+  .rows li { flex-wrap: wrap; gap: 2px 12px; }
+  .rows .v { white-space: normal; }
+}
